@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "pytest>=9.1.1",
+    "scrapy>=2.19.0",
+    "scrapyd>=1.6.0",
+    "scrapyd-client>=2.0.3",
+]
 
 [dependency-groups]
 dev = [
