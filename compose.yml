@@ -1,0 +1,17 @@
+services:
+  scrapyd:
+    build: .
+
+    container_name: books-scrapyd
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    ports:
+      - "6800:6800"
+
+    environment:
+      OUTPUT_DIR: /app/output
+      DATABASE_PATH: /app/output/books.db
+      DATABASE_RESET_ON_START: "1"
+      LOG_LEVEL: INFO
+
+    volumes:
+      - ./output:/app/output
